@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://smarttechventures.au/',
-  base: '/starlight-ion-theme',
+  base: '/',
   integrations: [starlight({
     title: 'Smart Tech Ventures',
     logo: {
