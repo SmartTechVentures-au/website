@@ -17,19 +17,18 @@ export default defineConfig({
       label: '[home] Home',
       link: '/'
     }, {
-      label: '[list] Features',
-      link: '/features/'
-    }, {
-      label: '[box] Guides',
-      autogenerate: {
-        directory: 'guides'
-      }
-    }, {
-      label: '[book] Reference',
-      autogenerate: {
-        directory: 'reference'
-      }
-    }],
+      label: '[list] Services',
+      link: '/services/'
+    }, 
+    {
+      label: '[book] About',
+      link: '/about/'
+    }, 
+    {
+      label: '[rocket] Contact',
+      link: '/contact/'
+    },  
+  ],
     components: {
       ThemeProvider: './src/components/ThemeProvider.astro',
       ThemeSelect: './src/components/ThemeSelect.astro',
