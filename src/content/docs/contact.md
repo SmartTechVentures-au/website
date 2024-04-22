@@ -17,8 +17,12 @@ description: Get in touch
 		<p>
 		  <label>Email <input type="email" name="email" /></label>
 		</p>
+         <p>
+		  <label for="subject">Message</label>
+        <textarea id="subject" name="subject" placeholder="How can we help you.." style="height:200px"></textarea>
+		</p>
 		<p>
-		  <button type="submit">Send</button>
+		    <input type="submit" value="Submit">
 		</p>
 	  </form>
     
