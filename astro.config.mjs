@@ -6,6 +6,21 @@ export default defineConfig({
   site: 'https://smarttechventures.au/',
   base: '/',
   integrations: [starlight({
+    head: [
+      // Example: add Fathom analytics script tag.
+      {
+        tag: 'script',
+        attrs: {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-BL4D319NYK',
+          'async': true,
+          defer: false,
+        },
+      },
+      {
+        tag: 'script',
+       content: 'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "G-BL4D319NYK");'
+      },
+    ],
     title: 'Smart Tech Ventures',
     logo: {
       src: './src/assets/ion-logo.svg'
