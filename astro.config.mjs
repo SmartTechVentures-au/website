@@ -11,14 +11,14 @@ export default defineConfig({
       {
         tag: 'script',
         attrs: {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-BL4D319NYK',
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-01MGQXJNBV',
           'async': true,
           defer: false,
         },
       },
       {
         tag: 'script',
-       content: 'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "G-BL4D319NYK");'
+       content: 'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "G-01MGQXJNBV");'
       },
     ],
     title: 'Smart Tech Ventures',
