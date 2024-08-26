@@ -1,0 +1,68 @@
+---
+import "../styles/global.css";
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smart Tech- Solution Architecture & Advisory Services</title>
+    
+    <meta name="description" content="Cloud Consultants">
+    <meta name="author" content="Smart Tech">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="keywords" content="Perth, solution architecture, technology strategy">
+    <link rel="canonical" href="https://smarttechventures.au" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Smart Tech| Perth IT Consultants" />
+    <meta property="og:description"
+        content="Cloud Architecture on Azure and AWS and GCP" />
+    <meta property="og:url" content="https://smarttechventures.au" />
+    <meta property="og:site_name" content="Axurcio" />
+    <meta property="og:image" content="https://smarttechventures.au/images/logo.png" />
+    <meta property="og:image:secure_url" content="https://smarttechventures.au/images/logo.png" />
+    <meta property="og:image:width" content="1124" />
+    <meta property="og:image:height" content="854" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SmartTechAU">
+    <meta name="twitter:creator" content="@SmartTechAU">
+    <meta name="twitter:title" content="SmartTechAU">
+    <meta name="twitter:description"
+        content="Perth IT consultants specialising in cloud solutions through agile delivery practices">
+    <meta name="twitter:image" content="https://smarttechventures.au/images/logo.png">
+    <link rel="sitemap" href="/sitemap-index.xml" />
+   <!-- Google tag (gtag.js) -->
+   <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=UA-9649471-5"></script>
+
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="bg-white font-SpaceGrotesk space-y-20">
+    <Navbar />
+    <slot />
+    <Footer/>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+   
+  <script is:inline type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9649471-5']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/axurcio/chat-with-chris-axurcio', text: 'Schedule time with us', color: '#0069ff', textColor: '#ffffff', branding: undefined }); }</script>
+<!-- Calendly badge widget end -->
+  </body>
+</html>

@@ -1,21 +1,20 @@
 {
-  "name": "",
+  "name": "smarttech",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "start": "node ./dist/server/entry.mjs",
+    "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/starlight": "^0.21.5",
-    "@fontsource-variable/space-grotesk": "^5.0.17",
-    "@fontsource/space-mono": "^5.0.19",
-    "astro": "^4.3.5",
-    "sharp": "^0.32.5",
-    "typescript": "^5.4.5"
+    "@astrojs/sitemap": "^3.1.5",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.1.2",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.4"
   }
 }

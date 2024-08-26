@@ -1,0 +1,74 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Smart Tech- Contact">
+  <main class="space-y-20">
+    <Container>
+      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div
+          class="relative flex flex-col items-center md:flex-row"
+          id="contact"
+        >
+          <div class="row items-center py-5 md:pr-16 md:w-4/12 md:py-10">
+            <div class="text-center md:text-left space-y-3 bg-lime">
+              <h2 class="text-4xl font-medium leading-none sm:text-6xl">
+                Contact Us
+              </h2>
+            </div>
+          </div>
+          <div class="flex items-center py-5 md:w-8/12 md:py-10">
+            <p class="text-xl font-normal leading-7 text-center md:text-left">
+              Connect with Us: Let's Discuss Your Needs
+            </p>
+          </div>
+        </div>
+        <div class="w-full">
+          <iframe
+            id="JotFormIFrame-241127131294852"
+            title="Contact Us"
+            onload="window.parent.scrollTo(0,0)"
+            allowtransparency="true"
+            allow="geolocation; microphone; camera; fullscreen"
+            src="https://form.jotform.com/241127131294852"
+            style="min-width:100%;max-width:100%;height:800px;border:none;"
+
+          >
+          </iframe>
+          <script
+            src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"
+          ></script>
+          <script is:inline>
+            window.jotformEmbedHandler(
+              "iframe[id='JotFormIFrame-241127131294852']",
+              "https://form.jotform.com/"
+            );
+          </script>
+        </div>
+        <div class="w-full">
+          <!-- Calendly inline widget begin -->
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/axurcio/chat-with-chris-axurcio"
+            style="min-width:320px;height:700px;"
+          >
+          </div>
+          <script
+            is:inline
+            type="text/javascript"
+            src="https://assets.calendly.com/assets/external/widget.js"
+            async
+          ></script>
+          <!-- Calendly inline widget end -->
+        </div>
+      </div>
+    </Container>
+  </main>
+  <script is:inline>
+    window.jotformEmbedHandler(
+      "iframe[id='JotFormIFrame-241083155835860'",
+      "https://form.jotform.com/"
+    );
+  </script>
+</Layout>
