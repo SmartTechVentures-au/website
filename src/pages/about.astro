@@ -1,0 +1,48 @@
+---
+import Container from "../components/Container.astro"
+import Layout from '../layouts/Layout.astro';
+import Team from "../components/Team.astro";
+---
+
+<Layout title="Welcome to My site">
+	<main class="space-y-20">
+		<Container>
+            <div class="relative flex flex-col-reverse items-center md:flex-row" id="about">
+                <div class="row items-center py-5 md:pb-20 md:pt-10">
+                    <div class="text-center space-y-10">
+                        <h2 class="text-5xl font-medium leading-none md:text-6xl">We navigate the <br> digital landscape <br> for success</h2>
+                        <p class="mt-6 mb-8  text-xl font-normal leading-7 sm:mb-12">Our agency helps businesses grow and succeed online through a range of services including technology strategy, cloud architecutre, data engineering and project delivery.</p>
+                        <p class="mt-6 mb-8  text-xl font-normal leading-7 sm:mb-12">We focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                        <a class="px-9 py-5 bg-zinc-900 hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex"  href="/contact" target="_self">
+                            <h2 class="text-center text-xl font-normal leading-7">Book a consultation</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex-row items-center">
+                <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6">
+                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                        <img src="/images/microsoft-partner-network.jpg" class="h-12 w-auto mx-auto" loading="lazy" alt="microsoft partner" width="" height="" />
+                    </div>
+                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                        <img src="/images/solutions/aws-parner-logo.jpg" class="h-12 w-auto mx-auto" loading="lazy" alt="aws partner" width="" height="" />
+                    </div>
+                    <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+                        <img src="/images/solutions/gcp-partner.png" class="h-9 w-auto m-auto" loading="lazy" alt="gcp partner" width="" height="" />
+                    </div>
+                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                        <img src="/images/solutions/github-partner.png" class="h-12 w-auto mx-auto" loading="lazy" alt="github partner" width="" height="" />
+                    </div>
+                    <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+                        <img src="/images/solutions/d365.jpg" class="h-8 w-auto m-auto" loading="lazy" alt="d365" width="" height="" />
+                    </div>
+                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                        <img src="/images/solutions/Salesforce.jpg" class="h-12 w-auto mx-auto" loading="lazy" alt="salesforce" width="" height="" />
+                    </div>
+                </div>
+            </div>
+        </Container>
+        <Team/>
+	</main>
+</Layout>

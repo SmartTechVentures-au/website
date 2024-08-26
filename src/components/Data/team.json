@@ -1,0 +1,78 @@
+{
+    "team":
+    [
+        {
+            "title": "Principal Consultant",
+            "name": "Chris McKelt",
+            "description": "20+ years of working in the IT industry delivering solutions to clients that help them succeed. ",
+            "profile": "/team/profile_small.jpg",
+            "link": "https://www.linkedin.com/in/chrismckelt/"
+        },
+        {
+            "title": "Talent Partner",
+            "name": "Tracy Dallas",
+            "description": "15+ years of experience in project management and team leadership. Strong organizational and communication skills",
+            "profile": "/team/tracy.jpg",
+            "link": "/"
+        },
+        {
+            "title": "Data Engineer",
+            "name": "Lachlan James",
+            "description": "12+ years of experience in data architecture",
+            "profile": "/team/ljm.jpg",
+            "link": "https://www.linkedin.com/in/lachlan-james-1611572b2/"
+        }
+
+    ],
+    "process":
+    [
+        {
+            "id": "01",
+            "hid": "accordion-open-heading-1",
+            "bid": "accordion-open-body-1",
+            "target": "#accordion-open-body-1",
+            "title": "Consultation",
+            "description": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+        },
+        {
+            "id": "02",
+            "hid": "accordion-open-heading-2",
+            "bid": "accordion-open-body-2",
+            "target": "#accordion-open-body-2",
+            "title": "Discovery",
+            "description": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+        },
+        {
+            "id": "03",
+            "hid": "accordion-open-heading-3",
+            "bid": "accordion-open-body-3",
+            "target": "#accordion-open-body-3",
+            "title": "Define Problem",
+            "description": "We will replay our understanding of the problem"
+        },
+        {
+            "id": "04",
+            "hid": "accordion-open-heading-4",
+            "bid": "accordion-open-body-4",
+            "target": "#accordion-open-body-4",
+            "title": "Design Options",
+            "description": "We present options to solve the problem along with pros and cons, cost and time frames."
+        },
+        {
+            "id": "05",
+            "hid": "accordion-open-heading-5",
+            "bid": "accordion-open-body-5",
+            "target": "#accordion-open-body-5",
+            "title": "Develop Solution",
+            "description": "We build and implement the choosen option with you alongside for the ride."
+        },
+        {
+            "id": "06",
+            "hid": "accordion-open-heading-6",
+            "bid": "accordion-open-body-6",
+            "target": "#accordion-open-body-6",
+            "title": "Delivery & Handover",
+            "description": "We handover everything to you making sure you are ready and enabled to operate."
+        }
+    ]
+}
