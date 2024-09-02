@@ -31,9 +31,11 @@ import Container from "./Container.astro"
             </li>
             ))}
             <li>
-                <a class="md:hidden px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" href="https://calendly.com/axurcio/chat-with-chris-axurcio" target="_blank">
-                  <h2 class="text-center text-xl font-normal leading-7">Book a meeting</h2>
-                </a>
+              <!-- Calendly badge widget begin -->
+              <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+              <script is:inline  src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+              <script is:inline  type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/chris-smarttechventures/30min', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff', branding: undefined }); }</script>
+              <!-- Calendly badge widget end -->
             </li>
         </ul>
       </div>
