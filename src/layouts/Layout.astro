@@ -65,10 +65,11 @@ import Footer from '../components/Footer.astro';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
-<!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/chris-smarttechventures/chat-with-us-1" style="min-width:320px;height:700px;"></div>
-<script is:inline type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Calendly inline widget end -->
+ <!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script is:inline src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script is:inline type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/chris-smarttechventures/chat-with-us-1', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff', branding: undefined }); }</script>
+<!-- Calendly badge widget end -->
 
   </body>
 </html>
