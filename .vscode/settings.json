@@ -1,4 +1,6 @@
 {
     "peacock.color": "#215732",
-    "gitlens.outputLevel": "debug"
+    "gitlens.outputLevel": "debug",
+    "sarif-viewer.connectToGithubCodeScanning": "off",
+    "codeQL.githubDatabase.download": "never"
 }
