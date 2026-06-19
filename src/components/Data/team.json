@@ -31,48 +31,48 @@
             "hid": "accordion-open-heading-1",
             "bid": "accordion-open-body-1",
             "target": "#accordion-open-body-1",
-            "title": "Consultation",
-            "description": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+            "title": "AI Discovery",
+            "description": "We assess your current AI maturity, data assets, team capability, and business goals. This gives us a clear baseline — what you have, what gaps exist, and where AI can unlock the most value quickly and sustainably."
         },
         {
             "id": "02",
             "hid": "accordion-open-heading-2",
             "bid": "accordion-open-body-2",
             "target": "#accordion-open-body-2",
-            "title": "Discovery",
-            "description": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+            "title": "Strategy & Roadmap",
+            "description": "We define your AI vision and prioritise use cases by business impact and feasibility. You receive a vendor-agnostic roadmap with clear milestones, investment levels, and expected outcomes — aligned to your organisation's appetite and constraints."
         },
         {
             "id": "03",
             "hid": "accordion-open-heading-3",
             "bid": "accordion-open-body-3",
             "target": "#accordion-open-body-3",
-            "title": "Define Problem",
-            "description": "We will replay our understanding of the problem"
+            "title": "Architecture Design",
+            "description": "We design the AI architecture: agent frameworks, data platforms, model selection, integration patterns, and infrastructure. We present multiple options with trade-offs, costs, and timelines so you make the decision with full information."
         },
         {
             "id": "04",
             "hid": "accordion-open-heading-4",
             "bid": "accordion-open-body-4",
             "target": "#accordion-open-body-4",
-            "title": "Design Options",
-            "description": "We present options to solve the problem along with pros and cons, cost and time frames."
+            "title": "Proof of Concept",
+            "description": "Before committing to full delivery, we build targeted POCs to validate the architecture and demonstrate value to stakeholders. This de-risks the investment and surfaces any technical constraints early, before they become expensive."
         },
         {
             "id": "05",
             "hid": "accordion-open-heading-5",
             "bid": "accordion-open-body-5",
             "target": "#accordion-open-body-5",
-            "title": "Develop Solution",
-            "description": "We recommend several options and build your preferred solution."
+            "title": "Full Implementation",
+            "description": "We deliver production-ready AI solutions with an emphasis on quality, security, observability, and scalability. Our team covers the full stack — data engineering, model integration, APIs, UI, and cloud infrastructure — so nothing falls through the gaps."
         },
         {
             "id": "06",
             "hid": "accordion-open-heading-6",
             "bid": "accordion-open-body-6",
             "target": "#accordion-open-body-6",
-            "title": "Delivery & Handover",
-            "description": "We handover everything to you making sure you are ready and enabled to operate."
+            "title": "Enablement & Handover",
+            "description": "We upskill your team, document the architecture and runbooks, and ensure you are operationally ready before we step back. Our goal is your independence — not dependency on us. We leave you capable and confident to own what we built together."
         }
     ]
 }
