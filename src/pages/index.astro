@@ -1,22 +1,678 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Services from "../components/Services.astro"
-import Expertise from '../components/Expertise.astro';
-import CsipAus from '../components/CsipAus.astro';
-import Team from '../components/Team.astro';
-import Case from '../components/Case.astro';
+import Layout from "../layouts/Layout.astro";
 
+const bookingUrl = "https://calendly.com/chris-smarttechventures/chat-with-us-1";
+const articlesUrl = "https://blog.smarttechventures.au";
+
+const metrics = [
+  { value: "30-50%", label: "Cycle-time reduction across repetitive operational workflows" },
+  { value: "Weeks", label: "To launch a focused pilot and validate measurable business value" },
+  { value: "24/7", label: "Coverage from AI-enabled operations, triage, and decision support" },
+];
+
+const loop = [
+  {
+    name: "Sense",
+    body: "Capture requests, documents, telemetry, and workflow signals.",
+    tag: "Intake",
+    tagClass: "bg-accent-400/20 text-accent-200",
+  },
+  {
+    name: "Reason",
+    body: "Apply business rules, retrieve context, and determine next-best action.",
+    tag: "Decisioning",
+    tagClass: "bg-brand-400/20 text-brand-100",
+  },
+  {
+    name: "Act",
+    body: "Trigger workflows, generate outputs, route approvals, and notify teams.",
+    tag: "Orchestration",
+    tagClass: "bg-emerald-400/20 text-emerald-100",
+  },
+];
+
+const services = [
+  {
+    id: "ai-solutions",
+    title: "AI Solutions",
+    body: "Custom AI systems, copilots, and LLM-powered products designed around real business outcomes.",
+    points: [
+      "Shorten decision cycles with faster access to trusted information",
+      "Reduce manual handling by automating repetitive cognitive work",
+    ],
+  },
+  {
+    id: "agentic-workflows",
+    title: "Agentic Workflows",
+    body: "Autonomous and semi-autonomous agents that coordinate tasks, tools, and decisions across teams.",
+    points: [
+      "Increase throughput without increasing headcount at the same rate",
+      "Improve response quality through orchestrated, multi-step decisioning",
+    ],
+  },
+  {
+    id: "process-automation",
+    title: "Process Automation",
+    body: "Intelligent automation that connects systems, removes friction, and scales execution.",
+    points: [
+      "Lower the cost and risk of high-volume operational processes",
+      "Eliminate delays caused by handoffs, rework, and disconnected tooling",
+    ],
+  },
+  {
+    id: "workforce-transformation",
+    title: "Workforce Transformation",
+    body: "AI-enabled operating models that help teams work faster, with better leverage and less overhead.",
+    points: [
+      "Lift team productivity without sacrificing quality or control",
+      "Free specialists from low-value admin and coordination work",
+    ],
+  },
+];
+
+const capabilities = [
+  {
+    title: "Strategy to production",
+    body: "We connect AI strategy, architecture, delivery, and operating model change so initiatives move past exploration and into measurable business performance.",
+  },
+  {
+    title: "Governed autonomy",
+    body: "Agentic systems are designed with approval checkpoints, observability, human oversight, and clear escalation rules from day one.",
+  },
+  {
+    title: "Enterprise integration",
+    body: "Solutions are grounded in the realities of existing data, security controls, line-of-business platforms, and operational processes.",
+  },
+  {
+    title: "Outcome-first delivery",
+    body: "Every engagement is shaped around a business metric: speed, cost, quality, compliance, service level, or workforce leverage.",
+  },
+  {
+    title: "Executive clarity",
+    body: "Complex AI concepts are translated into operating decisions, investment choices, and implementation roadmaps leaders can act on.",
+  },
+  {
+    title: "Capability uplift",
+    body: "We do not just deliver systems. We help your teams absorb the methods, patterns, and controls needed to scale confidently.",
+  },
+];
+
+const operatingLoop = [
+  {
+    n: "01",
+    title: "Sense",
+    body: "Agents ingest requests, events, documents, and structured business signals from across your operating environment.",
+    line: true,
+  },
+  {
+    n: "02",
+    title: "Reason",
+    body: "Context is retrieved, policies are applied, and the workflow determines intent, risk, priority, or next-best action.",
+    line: true,
+  },
+  {
+    n: "03",
+    title: "Act",
+    body: "Tasks are executed across approved systems, with automation, approvals, and human review where required.",
+    line: true,
+  },
+  {
+    n: "04",
+    title: "Learn",
+    body: "Outcomes are measured so prompts, rules, and orchestration improve over time instead of staying static.",
+    line: false,
+  },
+];
+
+const useCases = [
+  {
+    sector: "Government and public services",
+    title: "Operational request triage",
+    body: "Convert high-volume inboxes and request queues into structured, prioritised work with AI-assisted triage and routing.",
+    points: [
+      "Faster response times for citizens, staff, or internal service users",
+      "Reduced backlog growth and less manual rekeying",
+      "Better consistency across distributed operations teams",
+    ],
+  },
+  {
+    sector: "Enterprise operations",
+    title: "Executive knowledge copilot",
+    body: "Give leaders instant access to policy, program, operational, and performance context without hunting across documents and dashboards.",
+    points: [
+      "Quicker, better-informed decision making",
+      "Less time spent preparing executive briefings and summaries",
+      "Improved access to trusted organisational knowledge",
+    ],
+  },
+  {
+    sector: "Regulated operations",
+    title: "AI-assisted case management",
+    body: "Streamline investigations and case handling through summarisation, risk scoring, action recommendations, and workflow orchestration.",
+    points: [
+      "More throughput per analyst",
+      "Stronger process consistency and auditability",
+      "Lower time spent on low-value administrative tasks",
+    ],
+  },
+  {
+    sector: "Mid-to-large business transformation",
+    title: "Workforce productivity operating model",
+    body: "Redesign how teams work with AI so productivity improvements are systematic rather than ad hoc.",
+    points: [
+      "Higher quality adoption across teams",
+      "Lower operational drag from manual coordination work",
+      "A clear path from pilots to scaled transformation",
+    ],
+  },
+];
+
+const why = [
+  {
+    title: "Enterprise fluency",
+    body: "Smart Tech works where architecture, governance, delivery, and operations intersect. That matters when AI needs to coexist with security, policy, legacy systems, and risk controls.",
+  },
+  {
+    title: "Practical autonomy",
+    body: "We design agentic workflows for real operating environments, not lab conditions. That means clear roles, bounded authority, and measurable service outcomes.",
+  },
+  {
+    title: "Operator-centric UX",
+    body: "We simplify complex AI concepts into usable interfaces, decisions, and workflows that leaders and delivery teams can trust and adopt.",
+  },
+  {
+    title: "Transformation mindset",
+    body: "We combine solution delivery with workforce and process redesign, so technology changes actually alter how the organisation performs.",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Smart Tech helped us move from scattered AI experiments to a clear operating model with practical automation opportunities and governance we could defend.",
+    name: "Chief Digital Officer",
+    org: "Public sector organisation",
+  },
+  {
+    quote:
+      "Their strength was translating complex AI options into a roadmap our operations and technology teams could execute together.",
+    name: "Head of Enterprise Platforms",
+    org: "National services provider",
+  },
+  {
+    quote:
+      "We needed more than a prototype. Smart Tech designed a workflow that improved throughput, reduced manual effort, and gave the team confidence in the controls.",
+    name: "Director of Operations",
+    org: "Regulated enterprise",
+  },
+];
+
+const insights = [
+  {
+    tag: "Strategy",
+    date: "March 18, 2026",
+    read: "6 min read",
+    title: "From AI pilot to operating model",
+    body: "Why many AI initiatives stall after the prototype stage, and how to design the path to production from the outset.",
+  },
+  {
+    tag: "Agentic AI",
+    date: "March 10, 2026",
+    read: "7 min read",
+    title: "Designing agentic workflows for control, not chaos",
+    body: "How to structure autonomous workflows with bounded authority, escalation paths, and enterprise-grade trust.",
+  },
+  {
+    tag: "Workforce",
+    date: "February 27, 2026",
+    read: "5 min read",
+    title: "Where workforce transformation actually starts",
+    body: "The practical way to introduce AI into team workflows without creating tool sprawl or change fatigue.",
+  },
+];
 ---
 
-<Layout title="Smart Tech">
-	<main class="space-y-20">
-		<Hero/>
-		<Services/>
-		<Case/>
-		<Team/>
-		<Expertise/>
-		<CsipAus/>
+<Layout title="AI That Works, Not Just Experiments | Smart Tech">
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-slate-200/70 py-14 sm:py-20">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div class="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+        <div class="space-y-8 fade-up">
+          <span class="eyebrow">Enterprise AI Delivery</span>
+          <div class="space-y-6">
+            <h1 class="font-display max-w-5xl text-5xl font-semibold leading-[1.02] sm:text-6xl lg:text-7xl">
+              AI operating systems for work that cannot stay manual.
+            </h1>
+            <p class="max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+              Smart Tech helps enterprises, government teams, and transformation leaders deploy AI
+              that improves operations, accelerates decision-making, and scales workforce
+              performance with confidence.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-extrabold transition duration-200 border border-accent-300 bg-accent-400 text-ink shadow-soft hover:-translate-y-0.5 hover:border-accent-200 hover:bg-accent-300"
+            >
+              <span>Book a Consultation</span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+            <a
+              href="#services"
+              class="inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-extrabold transition duration-200 border border-slate-300 bg-white text-slate-950 hover:-translate-y-0.5 hover:border-brand-400 hover:text-brand-700"
+            >
+              <span>Explore Services</span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+          </div>
+          <div class="grid gap-4 border-y border-slate-200 py-5 sm:grid-cols-3">
+            {
+              metrics.map((m, i) => (
+                <div class="fade-up" style={`--delay:${i * 90}ms;`}>
+                  <p class="text-2xl font-semibold text-slate-950">{m.value}</p>
+                  <p class="mt-2 text-sm leading-6 text-slate-600">{m.label}</p>
+                </div>
+              ))
+            }
+          </div>
+          <p class="max-w-xl text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+            Trusted partner for enterprise AI, automation, and workforce transformation
+          </p>
+        </div>
 
-	</main>
+        <div class="fade-up" style="--delay: 120ms;">
+          <div class="dark-panel relative overflow-hidden p-6 sm:p-8">
+            <div class="absolute inset-0 grid-outline opacity-40"></div>
+            <div class="relative space-y-6">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="panel-label">Operational intelligence</p>
+                  <h2 class="font-display mt-3 text-3xl font-semibold text-white">Built for action</h2>
+                </div>
+                <div
+                  class="rounded-md border border-accent-400/30 bg-accent-400/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-300"
+                >
+                  Enterprise-ready
+                </div>
+              </div>
+              <div class="rounded-lg border border-white/10 bg-white/[0.04] p-4">
+                <img
+                  src="/Hero.svg"
+                  alt="Smart Tech AI workflow illustration"
+                  class="mx-auto max-h-64 w-full object-contain"
+                  loading="eager"
+                />
+              </div>
+              <div class="space-y-3">
+                {
+                  loop.map((step, i) => (
+                    <div class={`rounded-lg border border-white/10 bg-white/[0.04] p-4 ${i === 1 ? "sm:ml-8" : ""}`}>
+                      <div class="flex items-center justify-between gap-4">
+                        <div>
+                          <p class="text-sm font-semibold text-white">{step.name}</p>
+                          <p class="mt-1 text-sm text-slate-300">{step.body}</p>
+                        </div>
+                        <span class={`rounded-md px-3 py-1 text-xs font-semibold ${step.tagClass}`}>
+                          {step.tag}
+                        </span>
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="border-t border-white/10 pt-4">
+                  <p class="panel-label">Use cases</p>
+                  <p class="mt-3 text-lg font-semibold text-white">
+                    Copilots, autonomous workflows, case intelligence, and decision automation.
+                  </p>
+                </div>
+                <div class="border-t border-white/10 pt-4">
+                  <p class="panel-label">Delivery</p>
+                  <p class="mt-3 text-lg font-semibold text-white">
+                    Strategy, architecture, implementation, and workforce enablement.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section-shell scroll-mt-24">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 space-y-10">
+      <div class="space-y-5 max-w-4xl">
+        <span class="eyebrow">Services</span>
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            Advisory and delivery for AI transformation programs that need to perform.
+          </h2>
+          <p class="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+            We help leaders move faster with intelligent automation, while keeping delivery grounded
+            in architecture, governance, and operating realities.
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        {
+          services.map((service) => (
+            <article id={service.id} class="surface-panel fade-up group h-full overflow-hidden p-7 scroll-mt-24" style="--delay: 80ms;">
+              <div class="mb-6 h-1 w-20 bg-accent-400 transition group-hover:w-28" />
+              <div class="space-y-6">
+                <div class="space-y-3">
+                  <span class="inline-flex rounded-md bg-ink px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white">
+                    Service
+                  </span>
+                  <h3 class="font-display text-2xl font-semibold">{service.title}</h3>
+                  <p class="text-base leading-7 text-slate-600">{service.body}</p>
+                </div>
+                <ul class="space-y-3">
+                  {service.points.map((point) => (
+                    <li class="flex gap-3 text-sm leading-6 text-slate-600">
+                      <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-sm bg-accent-400" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="/contact"
+                  class="inline-flex items-center gap-2 text-sm font-extrabold text-brand-700 hover:text-brand-800"
+                >
+                  Discuss this service
+                  <span aria-hidden="true">-&gt;</span>
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="section-shell">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 space-y-10">
+      <div class="space-y-5 max-w-4xl">
+        <span class="eyebrow">Capabilities</span>
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            The capabilities enterprises need to turn AI into a durable operating advantage.
+          </h2>
+          <p class="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+            Smart Tech brings together AI solution design, agentic workflow orchestration, process
+            redesign, and workforce transformation so initiatives can move from exploration to
+            execution.
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {
+          capabilities.map((cap, i) => (
+            <article class="surface-panel fade-up p-8" style={`--delay:${i * 80}ms;`}>
+              <h3 class="font-display text-2xl font-semibold">{cap.title}</h3>
+              <p class="mt-4 text-base leading-7 text-slate-600">{cap.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Agentic Workflows operating loop -->
+  <section id="agentic-workflows" class="section-shell scroll-mt-24">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 space-y-10">
+      <div class="space-y-5 max-w-4xl">
+        <span class="eyebrow">Agentic Workflows</span>
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            A clear model for how autonomous systems operate across real business workflows.
+          </h2>
+          <p class="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+            We design agentic systems with context retrieval, decision logic, approvals, and
+            continuous improvement so autonomy stays useful, observable, and controlled.
+          </p>
+        </div>
+      </div>
+      <div class="dark-panel overflow-hidden p-6 sm:p-8">
+        <div class="mb-8 flex items-center justify-between gap-4">
+          <p class="panel-label">Operating Loop</p>
+          <div class="hidden flex-1 sm:block">
+            <div class="signal-line"></div>
+          </div>
+        </div>
+        <div class="grid gap-4 lg:grid-cols-4">
+          {
+            operatingLoop.map((step, i) => (
+              <div class="relative space-y-4 rounded-lg border border-white/10 bg-white/[0.04] p-5 fade-up" style={`--delay:${i * 100}ms;`}>
+                <div class="flex items-center gap-4">
+                  <span class="flex h-11 w-11 items-center justify-center rounded-md bg-accent-400 text-sm font-black text-ink">
+                    {step.n}
+                  </span>
+                  {step.line && (
+                    <span class="absolute left-[4.5rem] top-10 hidden h-px w-[calc(100%-3.5rem)] bg-gradient-to-r from-accent-400/90 to-brand-300/80 lg:block animate-pulse-line" />
+                  )}
+                </div>
+                <div class="space-y-3">
+                  <h3 class="font-display text-xl font-semibold text-white">{step.title}</h3>
+                  <p class="text-sm leading-7 text-slate-300">{step.body}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section id="use-cases" class="section-shell scroll-mt-24">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 space-y-10">
+      <div class="space-y-5 max-w-4xl">
+        <span class="eyebrow">Use Cases</span>
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            Practical AI applications for operational bottlenecks, service delivery, and decision
+            support.
+          </h2>
+          <p class="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+            The strongest AI initiatives are tied to an operating problem leaders already feel. These
+            example use cases show where Smart Tech typically creates leverage.
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        {
+          useCases.map((uc) => (
+            <article class="surface-panel fade-up h-full border-l-4 border-l-accent-400 p-7" style="--delay: 120ms;">
+              <div class="space-y-5">
+                <div class="space-y-3">
+                  <span class="inline-flex rounded-md bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
+                    {uc.sector}
+                  </span>
+                  <h3 class="font-display text-2xl font-semibold">{uc.title}</h3>
+                  <p class="text-base leading-7 text-slate-600">{uc.body}</p>
+                </div>
+                <ul class="space-y-3">
+                  {uc.points.map((point) => (
+                    <li class="flex gap-3 text-sm leading-6 text-slate-600">
+                      <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-sm bg-brand-500" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Smart Tech -->
+  <section class="section-shell">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 space-y-10">
+      <div class="space-y-5 max-w-4xl">
+        <span class="eyebrow">Why Smart Tech</span>
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            An AI transformation partner built for clarity, credibility, and delivery.
+          </h2>
+          <p class="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+            Enterprise AI work succeeds when strategy, systems, workflows, and people are designed
+            together. That is the lens Smart Tech brings to every engagement.
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {
+          why.map((item, i) => (
+            <article class="surface-panel fade-up p-8" style={`--delay:${i * 80}ms;`}>
+              <h3 class="font-display text-xl font-semibold">{item.title}</h3>
+              <p class="mt-4 text-sm leading-7 text-slate-600">{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-shell">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 space-y-10">
+      <div class="space-y-5 max-w-4xl">
+        <span class="eyebrow">Client Perspective</span>
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            Executive-friendly delivery that translates AI ambition into operational progress.
+          </h2>
+          <p class="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+            Representative feedback aligned to the types of advisory and delivery outcomes Smart Tech
+            is designed to support.
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-3">
+        {
+          testimonials.map((t) => (
+            <article class="dark-panel fade-up h-full p-7" style="--delay: 140ms;">
+              <div class="flex h-full flex-col justify-between gap-8">
+                <div class="h-1 w-16 bg-accent-400" />
+                <p class="text-lg leading-8 text-slate-200">"{t.quote}"</p>
+                <div class="border-t border-white/10 pt-5">
+                  <p class="text-sm font-semibold text-white">{t.name}</p>
+                  <p class="text-sm text-slate-400">{t.org}</p>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights -->
+  <section id="insights" class="section-shell scroll-mt-24">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 space-y-10">
+      <div class="space-y-5 max-w-4xl">
+        <span class="eyebrow">Insights</span>
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            Simple, practical thinking for leaders shaping AI-enabled organisations.
+          </h2>
+          <p class="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+            Read the latest articles on AI strategy, agentic systems, and workforce transformation on
+            the Smart Tech blog.
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-3">
+        {
+          insights.map((post) => (
+            <article class="surface-panel fade-up group h-full p-7" style="--delay: 160ms;">
+              <div class="flex h-full flex-col gap-5">
+                <div class="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  <span class="rounded-md bg-slate-100 px-3 py-1 text-slate-600">{post.tag}</span>
+                  <span>{post.date}</span>
+                  <span>{post.read}</span>
+                </div>
+                <div class="space-y-3">
+                  <h3 class="font-display text-2xl font-semibold">{post.title}</h3>
+                  <p class="text-base leading-7 text-slate-600">{post.body}</p>
+                </div>
+                <a
+                  href={articlesUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="mt-auto inline-flex items-center gap-2 text-sm font-extrabold text-brand-700 hover:text-brand-800"
+                >
+                  Read insight
+                  <span aria-hidden="true">-&gt;</span>
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+      <div>
+        <a
+          href={articlesUrl}
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-2 text-sm font-extrabold text-brand-700 hover:text-brand-800"
+        >
+          View all articles
+          <span aria-hidden="true">-&gt;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section-shell pt-8">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div class="dark-panel overflow-hidden p-8 sm:p-10 lg:p-12">
+        <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div class="space-y-5">
+            <span
+              class="eyebrow border-white/10 bg-white/5 text-accent-200 before:bg-accent-300"
+            >
+              Next Move
+            </span>
+            <h2 class="font-display max-w-3xl text-3xl font-semibold text-white sm:text-4xl">
+              Move faster with intelligent automation that fits how your organisation actually
+              operates.
+            </h2>
+            <p class="max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+              Whether you are shaping an AI roadmap, proving a new use case, or redesigning an
+              operational workflow, Smart Tech can help turn the opportunity into a controlled,
+              high-value delivery path.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-extrabold transition duration-200 border border-accent-300 bg-accent-400 text-ink shadow-soft hover:-translate-y-0.5 hover:border-accent-200 hover:bg-accent-300"
+            >
+              <span>Book a Consultation</span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-extrabold transition duration-200 border border-slate-300 bg-white text-slate-950 hover:-translate-y-0.5 hover:border-brand-400 hover:text-brand-700"
+            >
+              <span>Contact Smart Tech</span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

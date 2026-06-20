@@ -1,51 +1,125 @@
 ---
-import Container from "../components/Container.astro"
-import Layout from '../layouts/Layout.astro';
-import Team from "../components/Team.astro";
+import Layout from "../layouts/Layout.astro";
+
+const bookingUrl = "https://calendly.com/chris-smarttechventures/chat-with-us-1";
+
+const partners = [
+  { src: "/images/microsoft-partner-network.jpg", alt: "Microsoft partner", h: "h-12" },
+  { src: "/images/solutions/aws-parner-logo.jpg", alt: "AWS partner", h: "h-12" },
+  { src: "/images/solutions/gcp-partner.png", alt: "Google Cloud partner", h: "h-9" },
+  { src: "/images/solutions/github-partner.png", alt: "GitHub partner", h: "h-12" },
+  { src: "/images/solutions/d365.jpg", alt: "Dynamics 365", h: "h-8" },
+  { src: "/images/solutions/Salesforce.jpg", alt: "Salesforce", h: "h-12" },
+];
+
+// Smart Tech About Us content — preserved verbatim
+const paragraphs = [
+  "Boutique AI Architecture Agency. End to end. Vendor agnostic. Customer focused.",
+  "We are a small, senior team of AI and data architects with deep delivery experience across energy, mining, government, finance, and media. We don't do superficial strategy decks — we design and build AI systems that work in production.",
+  "Our approach is vendor agnostic: we recommend the best tool for your problem, not the one tied to a partnership incentive. We work with Azure, AWS, GCP, and the leading open-source AI ecosystem — selecting what fits your context, budget, and team.",
+  "From AI strategy and architecture through to agentic systems, data platforms, and MLOps pipelines — we take full ownership of the outcome, not just the advice.",
+];
 ---
 
-<Layout title="Welcome to Smart Tech">
-	<main class="space-y-20">
-		<Container>
-            <div class="relative flex flex-col-reverse items-center md:flex-row" id="about">
-                <div class="row items-center py-5 md:pb-20 md:pt-10">
-                    <div class="text-center space-y-10">
+<Layout
+  title="About Us | Smart Tech"
+  description="Smart Tech is a boutique AI architecture agency — a small, senior team of AI and data architects designing and building AI systems that work in production."
+>
+  <!-- About hero -->
+  <section class="relative overflow-hidden border-b border-slate-200/70 py-14 sm:py-20">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div class="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+        <div class="space-y-8 fade-up">
+          <span class="eyebrow">About Us</span>
+          <h1 class="font-display text-5xl font-semibold leading-[1.05] sm:text-6xl">
+            Boutique AI Architecture Agency.
+          </h1>
+          <p class="max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+            End to end. Vendor agnostic. Customer focused.
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-extrabold transition duration-200 border border-accent-300 bg-accent-400 text-ink shadow-soft hover:-translate-y-0.5 hover:border-accent-200 hover:bg-accent-300"
+            >
+              <span>Book a consultation</span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-extrabold transition duration-200 border border-slate-300 bg-white text-slate-950 hover:-translate-y-0.5 hover:border-brand-400 hover:text-brand-700"
+            >
+              <span>Contact us</span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+          </div>
+        </div>
 
-                        <p class="text-5xl font-medium leading-none md:text-6xl">About Us</p>
-                        <p class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12">Boutique AI Architecture Agency.<br>End to end. Vendor agnostic. Customer focused.</p>
-                        <p class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12">We are a small, senior team of AI and data architects with deep delivery experience across energy, mining, government, finance, and media. We don't do superficial strategy decks — we design and build AI systems that work in production.</p>
-                        <p class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12">Our approach is vendor agnostic: we recommend the best tool for your problem, not the one tied to a partnership incentive. We work with Azure, AWS, GCP, and the leading open-source AI ecosystem — selecting what fits your context, budget, and team.</p>
-                        <p class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12">From AI strategy and architecture through to agentic systems, data platforms, and MLOps pipelines — we take full ownership of the outcome, not just the advice.</p>
-                        <a class="px-9 py-5 bg-zinc-900 hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex"  href="/contact" target="_self">
-                            <h2 class="text-center text-xl font-normal leading-7">Book a consultation</h2>
-                        </a>
-                    </div>
-                </div>
+        <div class="fade-up" style="--delay: 120ms;">
+          <div class="dark-panel relative overflow-hidden p-6 sm:p-8">
+            <div class="absolute inset-0 grid-outline opacity-40"></div>
+            <div class="relative space-y-5">
+              <p class="panel-label">How we work</p>
+              <ul class="space-y-4">
+                <li class="rounded-lg border border-white/10 bg-white/[0.04] p-4">
+                  <p class="text-sm font-semibold text-white">Senior team only</p>
+                  <p class="mt-1 text-sm text-slate-300">
+                    AI and data architects with production delivery experience.
+                  </p>
+                </li>
+                <li class="rounded-lg border border-white/10 bg-white/[0.04] p-4 sm:ml-8">
+                  <p class="text-sm font-semibold text-white">Vendor agnostic</p>
+                  <p class="mt-1 text-sm text-slate-300">
+                    The best tool for your problem — Azure, AWS, GCP, or open source.
+                  </p>
+                </li>
+                <li class="rounded-lg border border-white/10 bg-white/[0.04] p-4">
+                  <p class="text-sm font-semibold text-white">Full ownership</p>
+                  <p class="mt-1 text-sm text-slate-300">
+                    Strategy, architecture, agentic systems, data platforms, and MLOps.
+                  </p>
+                </li>
+              </ul>
             </div>
-            
-            <div class="flex-row items-center">
-                <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6">
-                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-                        <img src="/images/microsoft-partner-network.jpg" class="h-12 w-auto mx-auto" loading="lazy" alt="microsoft partner" width="" height="" />
-                    </div>
-                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-                        <img src="/images/solutions/aws-parner-logo.jpg" class="h-12 w-auto mx-auto" loading="lazy" alt="aws partner" width="" height="" />
-                    </div>
-                    <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-                        <img src="/images/solutions/gcp-partner.png" class="h-9 w-auto m-auto" loading="lazy" alt="gcp partner" width="" height="" />
-                    </div>
-                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-                        <img src="/images/solutions/github-partner.png" class="h-12 w-auto mx-auto" loading="lazy" alt="github partner" width="" height="" />
-                    </div>
-                    <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-                        <img src="/images/solutions/d365.jpg" class="h-8 w-auto m-auto" loading="lazy" alt="d365" width="" height="" />
-                    </div>
-                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-                        <img src="/images/solutions/Salesforce.jpg" class="h-12 w-auto mx-auto" loading="lazy" alt="salesforce" width="" height="" />
-                    </div>
-                </div>
-            </div>
-        </Container>
-        <Team/>
-	</main>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About narrative -->
+  <section class="section-shell">
+    <div class="mx-auto w-full max-w-3xl px-6 sm:px-8 lg:px-12 space-y-6">
+      {
+        paragraphs.slice(1).map((p) => (
+          <p class="text-lg leading-8 text-slate-700">{p}</p>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="section-shell pt-0">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 space-y-8">
+      <div class="space-y-4 max-w-3xl">
+        <span class="eyebrow">Ecosystem</span>
+        <h2 class="font-display text-3xl font-semibold sm:text-4xl">
+          Partnered across the platforms that matter.
+        </h2>
+      </div>
+      <div class="surface-panel p-8">
+        <div class="grid grid-cols-2 items-center gap-8 sm:grid-cols-3 md:grid-cols-6">
+          {
+            partners.map((p) => (
+              <div class="flex grayscale transition duration-200 hover:grayscale-0">
+                <img src={p.src} class={`${p.h} w-auto mx-auto`} loading="lazy" alt={p.alt} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
