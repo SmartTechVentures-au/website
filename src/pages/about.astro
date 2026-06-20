@@ -12,6 +12,32 @@ const partners = [
   { src: "/images/solutions/Salesforce.jpg", alt: "Salesforce", h: "h-12" },
 ];
 
+const team = [
+  {
+    name: "Chris McKelt",
+    title: "Principal Consultant",
+    description:
+      "20+ years of working in the IT industry delivering solutions to clients that help them succeed.",
+    profile: "/team/profile_small.jpg",
+    link: "https://www.linkedin.com/in/chrismckelt/",
+  },
+  {
+    name: "Tracy Dallas",
+    title: "Talent Partner",
+    description:
+      "15+ years of experience in project management and team leadership. Strong organizational and communication skills.",
+    profile: "/team/tracy.jpg",
+    link: "",
+  },
+  {
+    name: "Lachlan James",
+    title: "Data Engineer",
+    description: "12+ years of experience in data architecture.",
+    profile: "/team/ljm.jpg",
+    link: "https://www.linkedin.com/in/lachlan-james-1611572b2/",
+  },
+];
+
 // Smart Tech About Us content — preserved verbatim
 const paragraphs = [
   "Boutique AI Architecture Agency. End to end. Vendor agnostic. Customer focused.",
@@ -97,6 +123,57 @@ const paragraphs = [
           <p class="text-lg leading-8 text-slate-700">{p}</p>
         ))
       }
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="section-shell pt-0 scroll-mt-24">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 space-y-10">
+      <div class="space-y-5 max-w-4xl">
+        <span class="eyebrow">Team</span>
+        <h2 class="font-display text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+          Senior practitioners who own the outcome.
+        </h2>
+        <p class="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+          We have delivered AI and data solutions across energy, mining, finance, government, and
+          media — and we stay hands-on from strategy through to production.
+        </p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {
+          team.map((member, i) => (
+            <article class="surface-panel fade-up h-full p-7" style={`--delay:${i * 80}ms;`}>
+              <div class="flex h-full flex-col gap-5">
+                <div class="flex items-center gap-4">
+                  <img
+                    src={member.profile}
+                    alt={member.name}
+                    loading="lazy"
+                    class="h-20 w-20 rounded-lg border border-slate-200 object-cover"
+                  />
+                  <div class="space-y-1">
+                    <p class="panel-label">{member.title}</p>
+                    <h3 class="font-display text-xl font-semibold text-slate-950">{member.name}</h3>
+                  </div>
+                </div>
+                <div class="h-1 w-16 bg-accent-400" />
+                <p class="text-sm leading-7 text-slate-600">{member.description}</p>
+                {member.link && (
+                  <a
+                    href={member.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="mt-auto inline-flex items-center gap-2 text-sm font-extrabold text-brand-700 hover:text-brand-800"
+                  >
+                    Connect on LinkedIn
+                    <span aria-hidden="true">-&gt;</span>
+                  </a>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 
